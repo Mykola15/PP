@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+	<table class="table">
+		<tr>
+			<td>Name</td>
+			<td>{{ object.name }}</td>
+		</tr>
+		<tr>
+			<td>Quantity</td>
+			<td>{{ object.quantity }}</td>
+		</tr>
+		<tr>
+			<td>Date</td>
+			<td>{{ object.date }}</td>
+		</tr>
+	</table>
+	<p>
+		<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Order</a>
+	</p>
+	<p>
+		<a class="btn btn-primary" href="{{object.get_delete_url}}">Delete Order</a>
+	</p>
+	<p>
+		<a class="btn btn-default" href="{% url 'product_manager_order_list' %}">Back</a>
+	</p>
+
+{% endblock %}
